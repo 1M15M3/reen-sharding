@@ -61,7 +61,9 @@ public class TConnection extends UnsupportedConnectionAdapter {
     public Statement createStatement() throws SQLException {
         checkClosed();
         StatementCreateCommand command = new StatementCreateCommand(StatementCreateMethod.createStatement, null);
-        return null;
+        TStatement stmt = new TStatement(this, command);
+        openedStatement.add(stmt);
+        return stmt;
     }
 
     @Override
