@@ -55,6 +55,21 @@ public class TExecuter {
     public ResultSetHandler execute(StatementCreateCommand createCommand, ExecuteCommand executeCommand, Map<Integer, ParameterCommand> parameterCommandMap, TStatement outStmt, TraceContext trace) {
         //参数
         boolean isPreparedStatement = createCommand.getMethod() != StatementCreateMethod.createStatement ? true : false;
-
+        String sql = getSql(isPreparedStatement, outStmt, executeCommand);
     }
-}
+
+    /**
+     * 获取原始sql
+     *
+     * @param isPreparedStatement
+     * @param outStmt
+     * @param executeCommand
+     * @return
+     */
+    private String getSql(boolean isPreparedStatement, TStatement outStmt, ExecuteCommand executeCommand) {
+        if (isPreparedStatement) {
+            return ((TPreparedStatement) outStmt).getSql();
+        } else {
+            return (String) executeCommand.getArgs()[0];
+        }
+    }
