@@ -24,4 +24,50 @@ public class TraceContext {
                 executeCommand != null ? executeCommand:"",
                 parameterCommand != null ? parameterCommand : "");
     }
+
+    public TraceContext(String sql, StatementCreateCommand createCommand, ExecuteCommand executeCommand, Map<Integer, ParameterCommand> parameterCommand) {
+        this.sql = sql;
+        this.createCommand = createCommand;
+        this.executeCommand = executeCommand;
+        this.parameterCommand = parameterCommand;
+    }
+
+    public TraceContext(String sql) {
+        this.sql = sql;
+    }
+
+    public TraceContext() {
+    }
+
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
+
+    public StatementCreateCommand getCreateCommand() {
+        return createCommand;
+    }
+
+    public void setCreateCommand(StatementCreateCommand createCommand) {
+        this.createCommand = createCommand;
+    }
+
+    public ExecuteCommand getExecuteCommand() {
+        return executeCommand;
+    }
+
+    public void setExecuteCommand(ExecuteCommand executeCommand) {
+        this.executeCommand = executeCommand;
+    }
+
+    public Map<Integer, ParameterCommand> getParameterCommand() {
+        return parameterCommand;
+    }
+
+    public void setParameterCommand(Map<Integer, ParameterCommand> parameterCommand) {
+        this.parameterCommand = parameterCommand;
+    }
 }
