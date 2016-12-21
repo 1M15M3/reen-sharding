@@ -1,6 +1,6 @@
 ###项目参考
 
-https://github.com/tongbanjie/baymax
+
 
 ###配置
 
@@ -53,14 +53,14 @@ https://github.com/tongbanjie/baymax
     </bean>
 
     <!-- 数据源分发器 -->
-    <bean id="multipleDataSource" class="com.tongbanjie.baymax.datasource.BaymaxDataSource" init-method="init">
+    <bean id="multipleDataSource" class="com.tongbanjie.aude.datasource.audeDataSource" init-method="init">
         <property name="dataSourceGroupSet">
             <set>
-                <bean class="com.tongbanjie.baymax.datasource.DataSourceGroup">
+                <bean class="com.tongbanjie.aude.datasource.DataSourceGroup">
                     <property name="identity" value="p0"/>
                     <property name="targetDataSource" ref="dataSource_p0"/>
                 </bean>
-                <bean class="com.tongbanjie.baymax.datasource.DataSourceGroup">
+                <bean class="com.tongbanjie.aude.datasource.DataSourceGroup">
                     <property name="identity" value="p1"/>
                     <property name="targetDataSource" ref="dataSource_p1"/>
                 </bean>
@@ -91,30 +91,29 @@ https://github.com/tongbanjie/baymax
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:baymax="http://baymax.tongbanjie.com/schema/baymax-3.0"
+       xmlns:aude="http://aude.tongbanjie.com/schema/aude-3.0"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	                       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-	                       http://baymax.tongbanjie.com/schema/baymax-3.0
-	                       http://baymax.tongbanjie.com/schema/baymax-3.0.xsd">
+	                       http://aude.tongbanjie.com/schema/aude-3.0
+	                       http://aude.tongbanjie.com/schema/aude-3.0.xsd">
 
-    <baymax:context/>
+    <aude:context/>
 
-    <baymax:table tableName="order" namePatten="order_{00}">
-        <baymax:columns>
+    <aude:table tableName="order" namePatten="order_{00}">
+        <aude:columns>
             <!-- 根据 id 分表 -->
-            <baymax:column name="id"/>
-        </baymax:columns>
-        <baymax:function class="com.tongbanjie.baymax.quickstart.c1.VirtualModFunction4_4"/>
-        <baymax:nodeMapping class="com.tongbanjie.baymax.router.strategy.SimpleTableNodeMapping">
+            <aude:column name="id"/>
+        </aude:columns>
+        <aude:function class="com.tongbanjie.aude.quickstart.c1.VirtualModFunction4_4"/>
+        <aude:nodeMapping class="com.tongbanjie.aude.router.strategy.SimpleTableNodeMapping">
             <!-- p0 代表是一个数据源，与 multipleDataSource 定义的 identity 对应 -->
 
             <!-- 这个配置代表的是 p0 这个数据源里有 order_00 与 order_02 两个表 -->
-            <baymax:node>p0:00,02</baymax:node>
+            <aude:node>p0:00,02</aude:node>
             <!-- 这个配置代表的是 p1 这个数据源里有 order_01 与 order_03 两个表 -->
-            <baymax:node>p1:01,03</baymax:node>
-        </baymax:nodeMapping>
-    </baymax:table>
-
+            <aude:node>p1:01,03</aude:node>
+        </aude:nodeMapping>
+    </aude:table>
 </beans>
 ```
