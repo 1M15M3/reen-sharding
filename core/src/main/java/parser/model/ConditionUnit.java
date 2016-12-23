@@ -53,6 +53,47 @@ public class ConditionUnit {
 
     @Override
     public int hashCode() {
-        return column.hashCode()+values+hashCode()+operator+hashCode();
+        return column.hashCode() + values.hashCode() + operator.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        ConditionUnit o = (ConditionUnit) obj;
+        return table.equals(o.getTable())
+        && column.equals(o.getColumn())
+                && values.equals(o.getValues())
+                && operator.equals(o.operator);
+    }
+
+    public String getTable() {
+        return table;
+    }
+
+    public void setTable(String table) {
+        this.table = table;
+    }
+
+    public String getColumn() {
+        return column;
+    }
+
+    public void setColumn(String column) {
+        this.column = column;
+    }
+
+    public List<String> getValues() {
+        return values;
+    }
+
+    public void setValues(List<String> values) {
+        this.values = values;
+    }
+
+    public ConditionUnitOperator getOperator() {
+        return operator;
+    }
+
+    public void setOperator(ConditionUnitOperator operator) {
+        this.operator = operator;
     }
 }
