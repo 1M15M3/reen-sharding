@@ -48,9 +48,6 @@ public class RouteService implements IRouteService {
         return plan;
     }
 
-    private ExecutePlan route(void tables, void calculateUnits, String sql, SqlType sqlType) {
-    }
-
     private List<Object> buildParameters(Map<Integer, ParameterCommand> parameterCommand) {
     }
 }
