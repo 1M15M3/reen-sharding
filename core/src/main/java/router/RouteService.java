@@ -10,6 +10,8 @@ import parser.model.ParseResult;
 import parser.model.SqlType;
 import parser.utils.SqlTypeUtil;
 import router.model.ExecutePlan;
+import router.model.ExecuteType;
+import router.model.TargetSqlEntity;
 
 import java.util.List;
 import java.util.Map;
@@ -59,6 +61,38 @@ public class RouteService implements IRouteService {
      * @return
      */
     private ExecutePlan route(List<String> tables, List<CalculateUnit> calculateUnits, String sql, SqlType sqlType) {
+        //先打个log
+        if (logger.isDebugEnabled()) {
+            logger.debug("计算单元:", +PrintUtil.printCalculates(calculateUnits));
+        }
+
+        // 判断是否解析出了表名
+        if (tables == null || tables.size() == 0) {
+            return buildExecutePlanTypeNo(sql, null, sqlType);
+        }
+    }
+
+    /**
+     * 如果一个表不是分区表,则创建无路由执行计划
+     *
+     * @param sql
+     * @param o
+     * @param sqlType
+     * @return
+     */
+    private ExecutePlan buildExecutePlanTypeNo(String sql, String tableName, SqlType sqlType) {
+        //不是分区表,那么久不需要路由
+        ExecutePlan plan = new ExecutePlan();
+        plan.setExecuteType(ExecuteType.NO);
+        TargetSqlEntity actionSql = new TargetSqlEntity();
+        actionSql.setSqlType(sqlType);
+        actionSql.setPartition(null);
+        actionSql.setLogicTableName(tableName);
+        actionSql.setOriginalSql(sql);
+        actionSql.setTargetSql(sql);
+        actionSql.setTargetTableName(tableName);
+        plan.addSql(actionSql);
+        return plan;
     }
 
     private List<Object> buildParameters(Map<Integer, ParameterCommand> parameterCommand) {
