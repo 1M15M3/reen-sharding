@@ -34,9 +34,63 @@ public class ParseResult {
      */
     private Map<String, String> tableAliasMap = new LinkedHashMap<String, String>();
 
-    public void getTables() {
+    /**
+     * select list 中所有的列的别名(普通列，不包含有函数的列),如果没有别名,别名＝列名
+     * 列名：别名
+     * 列名：列名
+     */
+    private Map<String/*field*/, String/*alias*/> aliaColumns;
+
+    /**
+     * select中是否有*
+     */
+    private boolean hasAllColumnExpr;
+
+    public List<CalculateUnit> getCalculateUnits() {
+        return calculateUnits;
     }
 
-    public void getCalculateUnits() {
+    public void setCalculateUnits(List<CalculateUnit> calculateUnits) {
+        this.calculateUnits = calculateUnits;
+    }
+
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
+
+    public List<String> getTables() {
+        return tables;
+    }
+
+    public void setTables(List<String> tables) {
+        this.tables = tables;
+    }
+
+    public Map<String, String> getTableAliasMap() {
+        return tableAliasMap;
+    }
+
+    public void setTableAliasMap(Map<String, String> tableAliasMap) {
+        this.tableAliasMap = tableAliasMap;
+    }
+
+    public Map<String, String> getAliaColumns() {
+        return aliaColumns;
+    }
+
+    public void setAliaColumns(Map<String, String> aliaColumns) {
+        this.aliaColumns = aliaColumns;
+    }
+
+    public boolean isHasAllColumnExpr() {
+        return hasAllColumnExpr;
+    }
+
+    public void setHasAllColumnExpr(boolean hasAllColumnExpr) {
+        this.hasAllColumnExpr = hasAllColumnExpr;
     }
 }

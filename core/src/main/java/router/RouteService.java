@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import parser.SqlParser;
 import parser.SqlParserFactory;
+import parser.model.CalculateUnit;
 import parser.model.ParseResult;
 import parser.model.SqlType;
 import parser.utils.SqlTypeUtil;
@@ -46,6 +47,18 @@ public class RouteService implements IRouteService {
         parser.changeSql(result, plan);
 
         return plan;
+    }
+
+    /**
+     * 根据CalculateUnit进行路由计算
+     *
+     * @param tables         sql中提取到的所有表名
+     * @param calculateUnits sql中提取到的计算单元
+     * @param sql            原始sql
+     * @param sqlType        sql类型
+     * @return
+     */
+    private ExecutePlan route(List<String> tables, List<CalculateUnit> calculateUnits, String sql, SqlType sqlType) {
     }
 
     private List<Object> buildParameters(Map<Integer, ParameterCommand> parameterCommand) {

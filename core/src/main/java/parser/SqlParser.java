@@ -10,7 +10,6 @@ import java.util.List;
  */
 public interface SqlParser {
 
-
     void parse(ParseResult result);
 
     void changeSql(ParseResult result, ExecutePlan plan);
