@@ -74,4 +74,6 @@ public abstract class UnsupportedStatementAdapter implements Statement {
     public boolean isCloseOnCompletion() throws SQLException {
         throw new SQLException("isCloseOnCompletion");
     }
+
+    public abstract void closeOpenedStatement();
 }

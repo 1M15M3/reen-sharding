@@ -219,4 +219,9 @@ private int maxFieldSize;
     public boolean isWrapperFor(Class<?> iface) throws SQLException {
         return false;
     }
+
+    @Override
+    public void closeOpenedStatement() {
+
+    }
 }
