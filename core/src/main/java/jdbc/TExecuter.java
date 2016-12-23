@@ -18,6 +18,7 @@ import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -93,14 +94,76 @@ public class TExecuter {
         outStmt.closeOpenedStatement();
         boolean resultType = false;
 
-        //处理explain
+        //处理explain语句的情况
         SqlType sqlType = SqlTypeUtil.getSqlType(sql);
-        if (sqlType.EXPLAIN == sqlType){
-
+        if (sqlType.EXPLAIN == sqlType) {
+            resultSet.add(new ExplainResultSet(plan));
+            resultSetHandler.setResultSet(new IteratorResultSet(resultSet, outStmt, plan));
+            setResultToStatement(true, outStmt, resultSetHandler);
+            return resultSetHandler;
         }
 
+        //真正的执行
+        for (TargetSqlEntity target : sqlList) {
+            Connection conn = getConnection(target);
+            Statement targetStatement = getStatement(isPreparedStatement, createCommand, parameterCommand, plan.getOverrideParameters(), conn, target);
+            ExecuteMethod method = executeCommand.getMethod();
+            Object[] args = executeCommand.getArgs();
+        }
 
     }
+
+    /**
+     *
+     * @param isPreparedStatement
+     * @param createCommand
+     * @param parameterCommand
+     * @param overrideParameters limit 解析过程中会产生需要覆盖的参数
+     * @param conn
+     * @param target
+     * @return
+     */
+    private Statement getStatement(boolean isPreparedStatement, StatementCreateCommand createCommand, Map<Integer, ParameterCommand> parameterCommand, Map<Integer, Object> overrideParameters, Connection conn, TargetSqlEntity target) {
+    }
+
+    /**
+     * 获取一个真正用于执行本次sql的connection
+     * 思路是拿到targetSqlEntity中的partition,根据partition得到datasource实例,最后得到connection
+     *
+     * @param target
+     * @return
+     */
+    private Connection getConnection(TargetSqlEntity target) throws SQLException {
+        String targetPartition = target.getPartition();
+        DataSource targetDataSource = targetPartition == null ? dataSource.getDefaultDatatSource() : dataSource.getDataSourceByName(targetPartition);
+        if (targetDataSource == null) {
+            throw new AudeException("没有找到对应的数据源实例,请检查配置:" + targetPartition);
+        }
+        Connection conn = openedConnection.get(targetDataSource);
+        if (conn == null) {
+            conn = targetDataSource.getConnection();
+            conn.setAutoCommit(currentConnection.getAutoCommit());
+            conn.setTransactionIsolation(currentConnection.getTransactionIsolation());
+            openedConnection.put(targetDataSource, conn);
+        }
+        return conn;
+    }
+
+    /**
+     * 把ResultSetHandler的值直接保存到Statement中,减少Statement对他的依赖
+     *
+     * @param trace
+     * @param outStmt
+     * @param resultSetHandler
+     */
+    private void setResultToStatement(boolean resultType, TStatement outStmt, ResultSetHandler resultSetHandler) {
+        if (resultType) {
+            outStmt.setCurrentResultSet(resultSetHandler.getResultSet());
+        } else {
+            outStmt.setCUrrentUpdateCount(resultSetHandler.getUpdateCount());
+        }
+    }
+
 
     /**
      * 获取原始sql
@@ -117,3 +180,4 @@ public class TExecuter {
             return (String) executeCommand.getArgs()[0];
         }
     }
+}

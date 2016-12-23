@@ -224,4 +224,10 @@ private int maxFieldSize;
     public void closeOpenedStatement() {
 
     }
+
+    public void setCurrentResultSet(TResultSet resultSet) {
+    }
+
+    public void setCUrrentUpdateCount(int updateCount) {
+    }
 }
