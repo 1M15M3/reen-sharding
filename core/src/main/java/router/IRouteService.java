@@ -8,7 +8,6 @@ import java.util.Map;
 /**
  * Created by aude on 2016/12/21.
  */
-public class IRouteService {
-    public ExecutePlan doRoute(String sql, Map<Integer, ParameterCommand> parameterCommand) {
-    }
+public interface IRouteService {
+    public ExecutePlan doRoute(String sql, Map<Integer, ParameterCommand> parameterCommand);
 }
