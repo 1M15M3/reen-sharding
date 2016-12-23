@@ -8,6 +8,8 @@ import java.sql.SQLException;
 
 /**
  * 表示一个创建Statement的命令,可以在多个Connection上执行,创建多个真实的Statement
+ *
+ *一个Command即一个"指令",也就是执行一个方法,所以它的pojo类是方法签名+参数
  * Created by aude on 2016/12/21.
  */
 public class StatementCreateCommand {

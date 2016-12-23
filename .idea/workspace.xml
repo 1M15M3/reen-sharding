@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92a4c449-45ac-4c66-8638-6ccb4e12d84e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/jdbc/model/ExecuteMethod.java" afterPath="$PROJECT_DIR$/core/src/main/java/jdbc/model/ExecuteMethod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateCommand.java" afterPath="$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateMethod.java" afterPath="$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateMethod.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,63 +36,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TConnection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/TConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TExecuter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/TExecuter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExecuteMethod.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/model/ExecuteMethod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExecuteCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/model/ExecuteCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnsupportedStatementAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/adapter/UnsupportedStatementAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatementCreateMethod.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StatementCreateMethod.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            <state relative-caret-position="714">
+              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatementCreateCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -133,8 +92,6 @@
         <option value="$PROJECT_DIR$/core/src/main/java/jdbc/model/ResultSetHandler.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/exception/TraceContext.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/exception/AudeException.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateMethod.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateCommand.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/jdbc/TConnection.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/jdbc/adapter/UnsupportedStatementAdapter.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/jdbc/TStatement.java" />
@@ -142,6 +99,8 @@
         <option value="$PROJECT_DIR$/core/src/main/java/jdbc/model/ExecuteCommand.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/jdbc/TPreparedStatement.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/jdbc/model/ExecuteMethod.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateCommand.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateMethod.java" />
       </list>
     </option>
   </component>
@@ -797,12 +756,12 @@
       <workItem from="1482310060445" duration="16649000" />
       <workItem from="1482471543620" duration="122000" />
       <workItem from="1482477344473" duration="168000" />
-      <workItem from="1482481008299" duration="1104000" />
+      <workItem from="1482481008299" duration="1920000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27532000" />
+    <option name="totallyTimeSpent" value="28348000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1157,29 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/adapter/UnsupportedStatementAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/TConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -1220,11 +1156,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/model/ExecuteMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="36" />
+        <state relative-caret-position="-272">
+          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/adapter/UnsupportedStatementAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/jdbc/model/StatementCreateMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
