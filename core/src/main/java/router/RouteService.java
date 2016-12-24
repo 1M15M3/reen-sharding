@@ -70,6 +70,9 @@ public class RouteService implements IRouteService {
         if (tables == null || tables.size() == 0) {
             return buildExecutePlanTypeNo(sql, null, sqlType);
         }
+
+
+
     }
 
     /**
