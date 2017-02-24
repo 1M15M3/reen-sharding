@@ -1,79 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.aude</groupId>
-    <artifactId>aude-sharding</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+	<groupId>com.tongbanjie.baymax</groupId>
+	<artifactId>baymax</artifactId>
+	<!-- <version>2.0.0-SNAPSHOT</version> -->
+	<version>3.0.0</version>
+	<packaging>pom</packaging>
 
+	<name>baymax</name>
+	<url>http://maven.apache.org</url>
 
-    <modules>
-        <module>quickstart</module>
-        <module>core</module>
-        <module>sequence</module>
-        <module>spring</module>
-    </modules>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<baymax.version>3.0.0</baymax.version>
+	</properties>
 
-    <repositories>
-        <repository>
-            <id>mvnrepository</id>
-            <name>mvnrepository</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <layout>default</layout>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+	<modules>
+		<module>baymax-core</module>
+		<module>baymax-test</module>
+		<module>baymax-sequence</module>
+        <module>baymax-spring</module>
+		<module>baymax-quickstart</module>
+	</modules>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <baymax.version>3.0.0</baymax.version>
-    </properties>
+	<!-- maven 中央仓库地址 -->
+	<repositories>
+		<repository>
+			<id>central</id>
+			<!-- 下载速度快 -->
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<!--<url>http://maven.antelink.com/content/repositories/central/</url>-->
+			<!-- 下载速度一般 -->
+			<!--<url>http://uk.maven.org/maven2</url>-->
+		</repository>
+	</repositories>
 
-    <build>
-        <plugins>
-            <!-- 指定 JDK 版本. -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-            <!-- 构建附带源码 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.1.2</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- 打包时不进行 junit 测试. -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-                <version>2.12</version>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<!-- 指定 JDK 版本. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- 构建附带源码 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- 打包时不进行 junit 测试. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+				<version>2.12</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>local private releases</name>
+			<url>http://192.168.1.6:8081/nexus/content/repositories/releases</url>
+		</repository>
+	</distributionManagement>
+
+<!-- 	<distributionManagement>
+		<repository>
+			<id>nexus-snapshots</id>
+			<name>local private snapshots</name>
+			<url>http://192.168.1.6:8081/nexus/content/repositories/snapshots/</url>
+		</repository>
+	</distributionManagement> -->
+	
 </project>
