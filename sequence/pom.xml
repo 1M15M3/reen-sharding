@@ -4,23 +4,23 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.tongbanjie.baymax</groupId>
-		<artifactId>baymax</artifactId>
-		<version>3.0.0</version>
+		<groupId>com.aude</groupId>
+		<artifactId>sharding</artifactId>
+			<version>3.0.0</version>
 	</parent>
-	
-	<artifactId>baymax-sequence</artifactId>
-	<name>baymax-sequence</name>
+
+	<artifactId>sequence</artifactId>
+	<name>sequence</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
-			<groupId>com.tongbanjie.baymax</groupId>
-			<artifactId>baymax-core</artifactId>
+			<groupId>com.aude</groupId>
+			<artifactId>core</artifactId>
 			<version>${baymax.version}</version>
 		</dependency>
 	</dependencies>

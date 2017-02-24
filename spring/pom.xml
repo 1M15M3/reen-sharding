@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>baymax</artifactId>
-        <groupId>com.tongbanjie.baymax</groupId>
+      <groupId>com.aude</groupId>
+    	<artifactId>sharding</artifactId>
         <version>3.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>baymax-spring</artifactId>
+    <artifactId>spring</artifactId>
     <packaging>jar</packaging>
 
-    <name>baymax-spring</name>
+    <name>spring</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -32,8 +32,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.tongbanjie.baymax</groupId>
-            <artifactId>baymax-core</artifactId>
+            <groupId>com.aude</groupId>
+            <artifactId>core</artifactId>
             <version>3.0.0</version>
         </dependency>
 

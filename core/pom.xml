@@ -4,13 +4,13 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.tongbanjie.baymax</groupId>
-		<artifactId>baymax</artifactId>
+		<groupId>com.aude</groupId>
+		<artifactId>sharding</artifactId>
 		<version>3.0.0</version>
 	</parent>
 
-	<artifactId>baymax-core</artifactId>
-	<name>baymax-core</name>
+	<artifactId>core</artifactId>
+	<name>core</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -41,7 +41,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
@@ -68,7 +68,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>baymax-core-${project.version}</finalName>
+		<finalName>core-${project.version}</finalName>
 		<plugins>
 			<!-- 指定 JDK 版本. -->
 			<plugin>

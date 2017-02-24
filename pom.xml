@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.tongbanjie.baymax</groupId>
-	<artifactId>baymax</artifactId>
+	<groupId>com.aude</groupId>
+	<artifactId>sharding</artifactId>
 	<!-- <version>2.0.0-SNAPSHOT</version> -->
 	<version>3.0.0</version>
 	<packaging>pom</packaging>
 
-	<name>baymax</name>
+	<name>sharding</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -18,11 +18,11 @@
 	</properties>
 
 	<modules>
-		<module>baymax-core</module>
-		<module>baymax-test</module>
-		<module>baymax-sequence</module>
-        <module>baymax-spring</module>
-		<module>baymax-quickstart</module>
+		<module>core</module>
+		<module>test</module>
+		<module>sequence</module>
+        <module>spring</module>
+		<module>quickstart</module>
 	</modules>
 
 	<!-- maven 中央仓库地址 -->
@@ -92,5 +92,5 @@
 			<url>http://192.168.1.6:8081/nexus/content/repositories/snapshots/</url>
 		</repository>
 	</distributionManagement> -->
-	
+
 </project>

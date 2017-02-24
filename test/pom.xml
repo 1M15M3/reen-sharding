@@ -5,13 +5,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.tongbanjie.baymax</groupId>
-		<artifactId>baymax</artifactId>
-		<version>3.0.0</version>
+		<groupId>com.aude</groupId>
+		<artifactId>sharding</artifactId>
+			<version>3.0.0</version>
 	</parent>
 
-	<artifactId>baymax-test</artifactId>
-	<name>baymax-test</name>
+	<artifactId>test</artifactId>
+	<name>test</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -33,11 +33,11 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.tongbanjie.baymax</groupId>
-			<artifactId>baymax-sequence</artifactId>
+			<groupId>com.aude</groupId>
+			<artifactId>sequence</artifactId>
 			<version>${baymax.version}</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>org.mvel</groupId>
 			<artifactId>mvel2</artifactId>
@@ -138,15 +138,14 @@
 
         <!-- -->
         <dependency>
-            <groupId>com.tongbanjie.baymax</groupId>
-            <artifactId>baymax-spring</artifactId>
+            <groupId>com.aude</groupId>
+            <artifactId>spring</artifactId>
             <version>3.0.0</version>
         </dependency>
-
 	</dependencies>
 
     <build>
-        <finalName>baymax-test-${project.version}</finalName>
+        <finalName>test-${project.version}</finalName>
         <plugins>
             <!-- 指定 JDK 版本. -->
             <plugin>
