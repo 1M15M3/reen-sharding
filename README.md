@@ -7,6 +7,7 @@
 数据源
 （spring-db.xml)
 
+```xml
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -74,11 +75,13 @@
     </bean>
 
 </beans>
+```
 对应的是core模块下的datasource包下的三个类：AudeDataSource，DataSourceDispatcher,DataSourceGroup
 
 路由规则
 （spring-aude.xml)
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:aude="http://aude.com/schema/aude-3.0"
@@ -106,3 +109,4 @@
         </aude:nodeMapping>
     </aude:table>
 </beans>
+```
