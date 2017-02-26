@@ -21,11 +21,7 @@
     <repositories>
         <repository>
             <id>central</id>
-            <!-- 下载速度快 -->
             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <!--<url>http://maven.antelink.com/content/repositories/central/</url>-->
-            <!-- 下载速度一般 -->
-            <!--<url>http://uk.maven.org/maven2</url>-->
         </repository>
     </repositories>
 
@@ -128,7 +124,5 @@
             <artifactId>mybatis-spring</artifactId>
             <version>RELEASE</version>
         </dependency>
-
-
     </dependencies>
 </project>
