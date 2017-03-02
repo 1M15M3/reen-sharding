@@ -97,6 +97,7 @@
             <artifactId>mybatis</artifactId>
             <version>3.0.6</version>
         </dependency>
+
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
