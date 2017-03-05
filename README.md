@@ -78,7 +78,6 @@
         </property>
         <property name="dataSource" ref="multipleDataSource"></property>
     </bean>
-
 </beans>
 ```
 对应的是core模块下的datasource包下的三个类：AudeDataSource，DataSourceDispatcher,DataSourceGroup
