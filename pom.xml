@@ -25,7 +25,6 @@
 		<module>quickstart</module>
 	</modules>
 
-	<!-- maven 中央仓库地址 -->
 	<repositories>
 		<repository>
 			<id>central</id>
